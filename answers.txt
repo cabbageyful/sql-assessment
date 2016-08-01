@@ -1,0 +1,9 @@
+SQL quiz.py problem #13:
+
+
+SELECT b.name, m.name, m.year, b.discontinued,
+    (b.discontinued - m.year) as years_until_brand_discontinued
+ FROM models as m LEFT JOIN brands as b
+     ON m.brand_name=b.name
+WHERE b.discontinued IS NOT NULL
+ORDER BY b.name, m.name, m.year;
